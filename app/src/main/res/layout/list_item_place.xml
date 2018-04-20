@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:padding="10dp"
+    >
 
     <ImageView
         style="@style/foto"
@@ -11,36 +12,33 @@
         android:src="@drawable/ic_launcher_background"/>
 
     <TextView
-        style="@style/nome"
+        style="@style/nome_fil"
         android:layout_toRightOf="@id/img_place_photo"
         android:id="@+id/txt_place_name"
         android:text="Um lugar qualquer" />
 
     <TextView
-        style="@style/stext"
+        style="@style/nome_dir"
         android:layout_alignLeft="@id/txt_place_name"
         android:layout_below="@id/txt_place_name"
-        android:id="@+id/txt_place_description"
-        android:text="Este é um lugar qualquer que serve alguma coisa" />
-
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/img_place_photo"
-        android:layout_alignLeft="@id/txt_place_name"
-        android:layout_marginTop="10dp"
-        style="?android:attr/ratingBarStyleSmall"
-        android:isIndicator="true"
-        android:numStars="5"
-        android:rating="3"
-        android:stepSize="0.5"
-        android:id="@+id/nota"/>
+        android:id="@+id/nome_dir"
+        android:text="Guilherme deodoro" />
 
     <TextView
-        style="@style/stext"
-        android:layout_alignParentRight="true"
-        android:layout_alignBottom="@id/img_place_photo"
-        android:id="@+id/txt_place_distance"
-        android:text="0.4 KM" />
+        style="@style/genero"
+        android:layout_alignLeft="@id/txt_place_name"
+        android:layout_below="@id/nome_dir"
+        android:id="@+id/genero"
+        android:text="Drama" />
+
+    <TextView
+        style="@style/lançamento"
+        android:layout_alignLeft="@id/genero"
+        android:layout_below="@id/genero"
+        android:id="@+id/txt_genero"
+        android:text="1999" />
+
+
+
 
 </RelativeLayout>

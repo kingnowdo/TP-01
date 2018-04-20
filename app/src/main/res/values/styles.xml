@@ -6,17 +6,33 @@
     </style>
     <style name="foto">
         <item name="android:layout_width">100dp</item>
-        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_height">110dp</item>
     </style>
-    <style name="nome">
+
+    <style name="nome_fil">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">15dp</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">25dp</item>
     </style>
-    <style name="stext">
+
+    <style name="nome_dir">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20dp</item>
     </style>
+
+    <style name="genero">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="lançamento">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
 
 </resources>
