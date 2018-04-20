@@ -25,14 +25,6 @@ public class MyAdapter extends BaseAdapter {
         places = new ArrayList<>();
 
         //... carrega dados da lista
-        places.add(new Place("Lab Amarelo", R.drawable.amarelo, 0.001, 5.0, "Minha casa"));
-        places.add(new Place("Minha casa", R.drawable.casa, 0.0, 4.0, "É legal"));
-        places.add(new Place("UFMG", R.drawable.ufmg, 2.3, 4.5, "Universidade Federal de Minas Gerais"));
-        places.add(new Place("Disney", R.drawable.disney, 2000.0, 0.0, "Viagem muito louca"));
-        places.add(new Place("Hogwarts", R.drawable.hogwarts, 9.75, 5.0, "Um mundo de magia pertinho da Disney"));
-        places.add(new Place("Mandela", R.drawable.onde, 0.0, 1.0, "Aonde é o Mandela?"));
-        places.add(new Place("Aldeia da folha", R.drawable.folha, 4000.34, 4.99, "Do outro lado do mundo"));
-        places.add(new Place("Brasil", R.drawable.brasil, 0.0, 5.0, "Famoso país do futebol"));
 
     }
     @Override

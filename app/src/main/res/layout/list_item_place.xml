@@ -8,33 +8,33 @@
 
     <ImageView
         style="@style/foto"
-        android:id="@+id/img_place_photo"
+        android:id="@+id/tarja"
         android:src="@drawable/ic_launcher_background"/>
 
     <TextView
         style="@style/nome_fil"
-        android:layout_toRightOf="@id/img_place_photo"
-        android:id="@+id/txt_place_name"
+        android:layout_toRightOf="@id/tarja"
+        android:id="@+id/nome_fil"
         android:text="Um lugar qualquer" />
 
     <TextView
         style="@style/nome_dir"
-        android:layout_alignLeft="@id/txt_place_name"
-        android:layout_below="@id/txt_place_name"
+        android:layout_alignLeft="@id/nome_fil"
+        android:layout_below="@id/nome_fil"
         android:id="@+id/nome_dir"
         android:text="Guilherme deodoro" />
 
     <TextView
         style="@style/genero"
-        android:layout_alignLeft="@id/txt_place_name"
+        android:layout_alignLeft="@id/nome_fil"
         android:layout_below="@id/nome_dir"
         android:id="@+id/genero"
         android:text="Drama" />
 
     <TextView
         style="@style/lançamento"
-        android:layout_alignLeft="@id/genero"
-        android:layout_below="@id/genero"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/nome_dir"
         android:id="@+id/txt_genero"
         android:text="1999" />
 
