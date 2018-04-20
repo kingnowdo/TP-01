@@ -7,13 +7,14 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/msgbv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quer conhecer locais?"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textSize="30dp"
-        android:id="@+id/msgbv"/>
+        android:layout_marginTop="98dp"
+        android:text="Quer conhecer locais?"
+        android:textSize="30dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -21,7 +22,13 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/msgbv"
         android:layout_marginTop="20dp"
-        android:text="Ver locais"
+        android:text="Ver filmes"
         android:id="@+id/bmain"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar filmes"
+        />
 
 </RelativeLayout>
