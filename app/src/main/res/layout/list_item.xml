@@ -15,7 +15,7 @@
         style="@style/nome_fil"
         android:layout_toRightOf="@id/tarja"
         android:id="@+id/nome_fil"
-        android:text="Um lugar qualquer" />
+        android:text="Um filme incrível e premiado qualquer" />
 
     <TextView
         style="@style/nome_dir"
@@ -35,10 +35,7 @@
         style="@style/lançamento"
         android:layout_alignParentRight="true"
         android:layout_below="@id/nome_dir"
-        android:id="@+id/txt_genero"
+        android:id="@+id/ano"
         android:text="1999" />
-
-
-
 
 </RelativeLayout>

@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.reinaldo.listadelocais.ListActivity">
+    tools:context="com.reinaldoveazey.movieme.ListActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Locais recomendados"
+        android:text="Os seus filmes"
         android:layout_centerHorizontal="true"
         android:textSize="30dp"
-        android:padding="2dp"
+        android:padding="6dp"
         android:id="@+id/title" />
 
     <ListView

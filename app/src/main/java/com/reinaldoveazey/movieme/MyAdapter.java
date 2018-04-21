@@ -17,23 +17,24 @@ import java.util.ArrayList;
  */
 
 public class MyAdapter extends BaseAdapter {
-    private ArrayList<Place> places; // lista que conterá os lugares a serem exibidos
+    private ArrayList<Movie> movies; // lista que conterá os filmes a serem exibidos
     private Context context;
 
     public MyAdapter(Context context) {
         this.context = context;
-        places = new ArrayList<>();
+        movies = new ArrayList<>();
 
         //... carrega dados da lista
+        movies.add(new Movie(R.drawable.onde, "Lab Amarelo", "eu", "nada", 2000));
 
     }
     @Override
     public int getCount() {
-        return this.places.size();
+        return this.movies.size();
     }
     @Override
     public Object getItem(int i) {
-        return this.places.get(i);
+        return this.movies.get(i);
     }
     @Override
     public long getItemId(int i) {
@@ -42,32 +43,32 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public View getView(final int i, View view, ViewGroup viewGroup) {
 
-        Place placeSelected = this.places.get(i);
+        Movie movieSelected = this.movies.get(i);
 
         // recupera a view do adapter que será customizada
-        View newView = LayoutInflater.from(this.context).inflate(R.layout.list_item_place, viewGroup, false);
+        View newView = LayoutInflater.from(this.context).inflate(R.layout.list_item, viewGroup, false);
 
         // recupera cada um dos campos do item
-        ImageView foto = newView.findViewById(R.id.img_place_photo);
-        TextView nome = newView.findViewById(R.id.txt_place_name);
-        TextView desc = newView.findViewById(R.id.txt_place_description);
-        RatingBar nota = newView.findViewById(R.id.nota);
-        TextView dist = newView.findViewById(R.id.txt_place_distance);
+        ImageView tarja = newView.findViewById(R.id.tarja);
+        TextView nome = newView.findViewById(R.id.nome_fil);
+        TextView dir = newView.findViewById(R.id.nome_dir);
+        TextView genero = newView.findViewById(R.id.genero);
+        TextView ano = newView.findViewById(R.id.ano);
 
         // define o valor de cada um dos campos
-        foto.setImageResource(placeSelected.getPhotoId());
-        nome.setText(placeSelected.getName());
-        desc.setText(placeSelected.getDesc());
-        nota.setRating(placeSelected.getRate().floatValue());
-        dist.setText(placeSelected.getDistance().toString() + " KM");
-
+        tarja.setImageResource(movieSelected.getTarjaId());
+        nome.setText(movieSelected.getName());
+        dir.setText(movieSelected.getNameDir());
+        genero.setText(movieSelected.getGenero());
+        ano.setText(movieSelected.getAno().toString());
+/*
         newView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context,"Clicou no " + (i+1) + "°", Toast.LENGTH_SHORT).show();
             }
         });
-
+*/
         return newView;
     }
 
