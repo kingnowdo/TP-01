@@ -36,12 +36,15 @@ public class MyAdapter extends BaseAdapter {
     public Object getItem(int i) {
         return this.movies.get(i);
     }
+    public Movie getItemM(int i){
+        return this.movies.get(i);
+    }
     @Override
     public long getItemId(int i) {
         return i;
     }
 
-    private Integer obterImagemTarja(int idade){
+    static public Integer obterImagemTarja(int idade){
         switch (idade){
             case 0:
                 return R.drawable.ic_launcher_background;
@@ -56,7 +59,7 @@ public class MyAdapter extends BaseAdapter {
             case 18:
                 return R.drawable.ic_launcher_background;
             default:
-                return null;
+                return R.drawable.ic_launcher_foreground;
         }
     }
 
@@ -81,14 +84,7 @@ public class MyAdapter extends BaseAdapter {
         dir.setText(movieSelected.getNameDir());
         genero.setText(movieSelected.getGenero());
         ano.setText(movieSelected.getAno().toString());
-/*
-        newView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context,"Clicou no " + (i+1) + "°", Toast.LENGTH_SHORT).show();
-            }
-        });
-*/
+
         return newView;
     }
 }
