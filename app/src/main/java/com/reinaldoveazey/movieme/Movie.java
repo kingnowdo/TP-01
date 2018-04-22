@@ -2,22 +2,22 @@ package com.reinaldoveazey.movieme;
 
 public class Movie {
 
-    private Integer tarjaId;    // id do ícone de classificação indicativa
-    private String name;        // nome do filme
-    private String nameDir;     // nome do diretor
-    private String genero;      // genero do filme
-    private Integer ano;        // ano de lancamento do filme
+    private Integer tarja;    // idade de classificação indicativa (0 a 18)
+    private String name;      // nome do filme
+    private String nameDir;   // nome do diretor
+    private String genero;    // genero do filme
+    private Integer ano;      // ano de lancamento do filme
 
     /**
      * Construtor
-     * @param tarjaId Id da imagem (R.drawable.imagem)
+     * @param tarja Idade de classificação, que depois será traduzida para imagem no adaptador
      * @param name Nome do filme
      * @param nameDir Nome do diretor
      * @param genero Gênero (Ação, Drama, Comédia, Suspense, Ficção ou Romance)
      * @param ano Ano de lancamento do filme (integer)
      */
-    public Movie(Integer tarjaId, String name, String nameDir, String genero, Integer ano) {
-        this.tarjaId = tarjaId;
+    public Movie(Integer tarja, String name, String nameDir, String genero, Integer ano) {
+        this.tarja = tarja;
         this.name = name;
         this.nameDir = nameDir;
         this.genero = genero;
@@ -32,12 +32,12 @@ public class Movie {
     }
 
 
-    public Integer getTarjaId() {
-        return tarjaId;
+    public Integer getTarja() {
+        return tarja;
     }
 
-    public void setTarjaId(Integer tarjaId) {
-        this.tarjaId = tarjaId;
+    public void setTarja(Integer tarja) {
+        this.tarja = tarja;
     }
 
     public String getName() {

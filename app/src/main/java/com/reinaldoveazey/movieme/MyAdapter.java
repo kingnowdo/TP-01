@@ -25,8 +25,8 @@ public class MyAdapter extends BaseAdapter {
         movies = new ArrayList<>();
 
         //... carrega dados da lista
-        movies.add(new Movie(R.drawable.onde, "Lab Amarelo", "eu", "nada", 2000));
-
+        movies.add(new Movie(18, "Disneyland with Honda", "Sr. Incrível", "Migué supremo", 2013));
+        movies.add(new Movie(0, "Entrei num armário em Hogwarts e saí em Nárnia", "eu", "n", 2018));
     }
     @Override
     public int getCount() {
@@ -40,6 +40,26 @@ public class MyAdapter extends BaseAdapter {
     public long getItemId(int i) {
         return i;
     }
+
+    private Integer obterImagemTarja(int idade){
+        switch (idade){
+            case 0:
+                return R.drawable.ic_launcher_background;
+            case 10:
+                return R.drawable.ic_launcher_background;
+            case 12:
+                return R.drawable.ic_launcher_background;
+            case 14:
+                return R.drawable.ic_launcher_background;
+            case 16:
+                return R.drawable.ic_launcher_background;
+            case 18:
+                return R.drawable.ic_launcher_background;
+            default:
+                return null;
+        }
+    }
+
     @Override
     public View getView(final int i, View view, ViewGroup viewGroup) {
 
@@ -56,7 +76,7 @@ public class MyAdapter extends BaseAdapter {
         TextView ano = newView.findViewById(R.id.ano);
 
         // define o valor de cada um dos campos
-        tarja.setImageResource(movieSelected.getTarjaId());
+        tarja.setImageResource(obterImagemTarja(movieSelected.getTarja()));
         nome.setText(movieSelected.getName());
         dir.setText(movieSelected.getNameDir());
         genero.setText(movieSelected.getGenero());
@@ -71,5 +91,4 @@ public class MyAdapter extends BaseAdapter {
 */
         return newView;
     }
-
 }
