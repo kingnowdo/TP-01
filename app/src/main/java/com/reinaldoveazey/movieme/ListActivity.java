@@ -17,6 +17,10 @@ public class ListActivity extends Activity {
 
     private int modo=0; // 0 = modo em que o click abre tela de detales. 1 = modo em que o click remove o filme
 
+    private Movie newMovie(){
+        return new Movie(12,"Novo filme","Novo diretor","Algum gênero",2018);
+    }
+
     private void removerItem(int pos, MyAdapter adaptador, ListView moviesListView){
         String msgRem = adaptador.remover(pos).getName() + " removido!"; //remover
         moviesListView.setAdapter(adaptador); //atualizar lista
@@ -38,10 +42,16 @@ public class ListActivity extends Activity {
         getMenuInflater().inflate(R.menu.menu_lista,menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+            case R.id.menu_add: //Isso não pode funfa nem fudendo. funfo, que gambiarra da porra
+                setModoLista();
+                ListView lista = findViewById(R.id.listmain);
+                MyAdapter adaptador = (MyAdapter) lista.getAdapter();
+                adaptador.adicionar(newMovie());
+                lista.setAdapter(adaptador);
+                return true;
             case R.id.menu_remove:
                 if(modo==0) setModoRemover();
                 else if(modo==1) setModoLista();
