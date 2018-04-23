@@ -17,8 +17,9 @@ public class ListActivity extends Activity {
 
     private int modo=0; // 0 = modo em que o click abre tela de detales. 1 = modo em que o click remove o filme
 
-    private void removerItem(int pos, MyAdapter adaptador){
-        String msgRem = adaptador.remover(pos).getName() + " removido!";
+    private void removerItem(int pos, MyAdapter adaptador, ListView moviesListView){
+        String msgRem = adaptador.remover(pos).getName() + " removido!"; //remover
+        moviesListView.setAdapter(adaptador); //atualizar lista
         Toast.makeText(ListActivity.this,msgRem,Toast.LENGTH_SHORT).show();
     }
     private void setModoLista(){
@@ -64,7 +65,7 @@ public class ListActivity extends Activity {
         setContentView(R.layout.activity_list);
 
         // faz a ligação entre a ListView e o Adapter
-        ListView moviesListView = findViewById(R.id.listmain);
+        final ListView moviesListView = findViewById(R.id.listmain);
         final MyAdapter adaptador = new MyAdapter(this);
         moviesListView.setAdapter(adaptador);
 
@@ -96,8 +97,7 @@ public class ListActivity extends Activity {
                         //Remover e voltar para modo 0
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            removerItem(position,adaptador);
-                            Toast.makeText(ListActivity.this,"Apagou o " + adaptador.getItemM(position).getName(),Toast.LENGTH_SHORT).show();
+                            removerItem(position,adaptador,moviesListView);
                             setModoLista();
                         }
                     });
@@ -109,7 +109,7 @@ public class ListActivity extends Activity {
                             setModoLista();
                         }
                     });
-                    dialogoB.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    dialogoB.setOnCancelListener(new DialogInterface.OnCancelListener() { //Quando o usuário aperta voltar ou fora do diálogo
                         //Fazer nada
                         @Override
                         public void onCancel(DialogInterface dialog) {

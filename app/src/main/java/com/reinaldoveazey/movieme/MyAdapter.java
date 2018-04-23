@@ -27,6 +27,7 @@ public class MyAdapter extends BaseAdapter {
         //... carrega dados da lista
         movies.add(new Movie(18, "Disneyland with Honda", "Sr. Incrível", "Migué supremo", 2013));
         movies.add(new Movie(0, "Entrei num armário em Hogwarts e saí em Nárnia", "eu", "n", 2018));
+        movies.add(new Movie(12,"Atrazados mas de pé","O destino","Desespero",2018));
     }
     @Override
     public int getCount() {
