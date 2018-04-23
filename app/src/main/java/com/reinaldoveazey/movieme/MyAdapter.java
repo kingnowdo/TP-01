@@ -63,6 +63,13 @@ public class MyAdapter extends BaseAdapter {
         }
     }
 
+    public Movie remover (int pos){
+        return movies.remove(pos);
+    }
+    public void adicionar (Movie m){
+        movies.add(m);
+    }
+
     @Override
     public View getView(final int i, View view, ViewGroup viewGroup) {
 
