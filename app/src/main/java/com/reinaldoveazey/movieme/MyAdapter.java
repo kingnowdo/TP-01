@@ -48,19 +48,19 @@ public class MyAdapter extends BaseAdapter {
     static public Integer obterImagemTarja(int idade){
         switch (idade){
             case 0:
-                return R.drawable.ic_launcher_background;
+                return R.drawable.livre;
             case 10:
-                return R.drawable.ic_launcher_background;
+                return R.drawable.t10;
             case 12:
-                return R.drawable.ic_launcher_background;
+                return R.drawable.t12;
             case 14:
-                return R.drawable.ic_launcher_background;
+                return R.drawable.t14;
             case 16:
-                return R.drawable.ic_launcher_background;
+                return R.drawable.t16;
             case 18:
-                return R.drawable.ic_launcher_background;
+                return R.drawable.t18;
             default:
-                return R.drawable.ic_launcher_foreground;
+                return R.drawable.onde;
         }
     }
 
