@@ -19,6 +19,7 @@
 
     <TextView
         style="@style/nome_dir"
+        android:layout_height="0dp"
         android:layout_alignLeft="@id/nome_fil"
         android:layout_below="@id/nome_fil"
         android:id="@+id/nome_dir"
