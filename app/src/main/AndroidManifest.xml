@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListActivity" />
-        <activity android:name=".FilmeDetalesActivity"></activity>
+        <activity android:name=".FilmeDetalesActivity" />
+        <activity android:name=".NewMovieActivity"></activity>
     </application>
 
 </manifest>

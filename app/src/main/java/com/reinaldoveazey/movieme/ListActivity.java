@@ -15,12 +15,13 @@ import android.widget.Toast;
 
 public class ListActivity extends Activity {
 
+    static final int REQUEST_MOVIE_CODE = 1;  // Código de receber novo movie
     private int modo=0; // 0 = modo em que o click abre tela de detales. 1 = modo em que o click remove o filme
 
-    private Movie newMovie(){
-        return new Movie(12,"Novo filme","Novo diretor","Algum gênero",2018);
+    private void newMovie(){
+        Intent intent = new Intent(ListActivity.this,NewMovieActivity.class);
+        startActivityForResult(intent,REQUEST_MOVIE_CODE);
     }
-
     private void removerItem(int pos, MyAdapter adaptador, ListView moviesListView){
         String msgRem = adaptador.remover(pos).getName() + " removido!"; //remover
         moviesListView.setAdapter(adaptador); //atualizar lista
@@ -38,6 +39,27 @@ public class ListActivity extends Activity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);// Check which request we're responding to
+        if (requestCode == REQUEST_MOVIE_CODE) {
+            if (resultCode == RESULT_OK) {
+                Movie movie = new Movie();
+                movie.setName(data.getStringExtra("nome"));
+                movie.setTarja(Integer.parseInt(data.getStringExtra("idade")));
+                movie.setNameDir(data.getStringExtra("diretor"));
+                movie.setGenero(data.getStringExtra("genero"));
+                movie.setAno(Integer.parseInt(data.getStringExtra("ano")));
+
+                //Agora vem a gambiarra básica
+                ListView lista = findViewById(R.id.listmain);
+                MyAdapter adaptador = (MyAdapter) lista.getAdapter();
+                adaptador.adicionar(movie);
+                lista.setAdapter(adaptador); //atualizar
+            }
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_lista,menu);
         return super.onCreateOptionsMenu(menu);
@@ -45,12 +67,9 @@ public class ListActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.menu_add: //Isso não pode funfa nem fudendo. funfo, que gambiarra da porra
+            case R.id.menu_add:
                 setModoLista();
-                ListView lista = findViewById(R.id.listmain);
-                MyAdapter adaptador = (MyAdapter) lista.getAdapter();
-                adaptador.adicionar(newMovie());
-                lista.setAdapter(adaptador);
+                newMovie();
                 return true;
             case R.id.menu_remove:
                 if(modo==0) setModoRemover();
