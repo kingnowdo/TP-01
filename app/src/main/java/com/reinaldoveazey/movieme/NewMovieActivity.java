@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class NewMovieActivity extends Activity {
 
@@ -25,17 +26,31 @@ public class NewMovieActivity extends Activity {
         botaoOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putString("nome",nome.getText().toString());
-                bundle.putString("idade",idade.getText().toString());
-                bundle.putString("diretor",diretor.getText().toString());
-                bundle.putString("genero",genero.getText().toString());
-                bundle.putString("ano",ano.getText().toString());
+                //Pegar as entradas de texto
+                String n = nome.getText().toString();
+                String i = idade.getText().toString();
+                String d = diretor.getText().toString();
+                String g = genero.getText().toString();
+                String a = ano.getText().toString();
 
-                Intent intent = new Intent();
-                intent.putExtras(bundle);
-                setResult(RESULT_OK, intent);
-                finish();
+                //Verificar se tudo foi preenchido antes de criar o filme
+                if(n.length()>0&&i.length()>0&&d.length()>0&&g.length()>0&&a.length()>0) {
+                    //Encher um bundle
+                    Bundle bundle = new Bundle();
+                    bundle.putString("nome", n);
+                    bundle.putString("idade", i);
+                    bundle.putString("diretor", d);
+                    bundle.putString("genero", g);
+                    bundle.putString("ano", a);
+
+                    Intent intent = new Intent();
+                    intent.putExtras(bundle);
+                    setResult(RESULT_OK, intent); //Configurar para que responda a primeira atividade com o filme
+                    finish(); //Finalizar essa atividade e assim voltar para a anterior
+                }
+                else {
+                    Toast.makeText(NewMovieActivity.this,"Por favor, preencha todos os campos",Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
