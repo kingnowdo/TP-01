@@ -9,45 +9,46 @@
     android:stretchColumns="1" >
 
 
-<TableRow>
-    <ImageView
-        android:id="@+id/detales_tarja"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="15dp"
-        android:src="@drawable/ic_launcher_background" />
-</TableRow>
+    <TableRow>
+        <ImageView
+            android:id="@+id/detales_tarja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="15dp"
+            android:src="@drawable/ic_launcher_background" />
 
+    </TableRow>
 
     <TableRow>
-        <ImageView android:src="@drawable/film"
+        <ImageView
+            android:src="@drawable/film"
             android:paddingBottom="15dp"/>
 
         <TextView
             android:id="@+id/detales_nome_fil"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Nenhum filme carregado"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:text="Nenhum filme carregado ate agora"
             android:textSize="20dp" />
-</TableRow>
 
-
-    <TableRow>
-
-        <ImageView android:src="@drawable/director"
-            android:paddingBottom="15dp" />
-
-    <TextView
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/detales_nome_dir"
-        android:text="Diretor" />
     </TableRow>
 
     <TableRow>
+        <ImageView
+            android:src="@drawable/director"
+            android:paddingBottom="15dp" />
 
+        <TextView
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detales_nome_dir"
+            android:text="Diretor" />
+
+    </TableRow>
+
+    <TableRow>
         <ImageView android:src="@drawable/theater"
             android:paddingBottom="15dp"/>
 
@@ -56,19 +57,31 @@
             android:id="@+id/detales_genero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Genero"
-            />
+            android:text="Genero" />
+
     </TableRow>
 
     <TableRow>
-        <ImageView android:src="@drawable/calendar" />
-    <TextView
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/detales_ano"
-        android:text="ano" />
+        <ImageView
+            android:src="@drawable/calendar" />
+        <TextView
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detales_ano"
+            android:text="ano" />
+
     </TableRow>
+
+    <RelativeLayout android:layout_marginTop="40dp">
+        <Button
+            android:id="@+id/detales_btCompartilha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compartilhar"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
 
 
 </TableLayout>
