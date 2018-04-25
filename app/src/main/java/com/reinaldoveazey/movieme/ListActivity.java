@@ -29,7 +29,7 @@ public class ListActivity extends Activity {
     }
     private void setModoLista(){
         TextView title = findViewById(R.id.title);
-        title.setText("Os seus filmes");
+        title.setText("@string/Osseusfilmes");
         modo = 0;
     }
     private void setModoRemover(){

@@ -1,40 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FilmeDetalesActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:stretchColumns="1" >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/detales_nome_fil"
-        android:text="Nenhum filme carregado"/>
 
+<TableRow>
     <ImageView
+        android:id="@+id/detales_tarja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/detales_tarja"
-        android:src="@drawable/ic_launcher_background"/>
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="15dp"
+        android:src="@drawable/ic_launcher_background" />
+</TableRow>
+
+
+    <TableRow>
+        <ImageView android:src="@drawable/film"
+            android:paddingBottom="15dp"/>
+
+        <TextView
+            android:id="@+id/detales_nome_fil"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Nenhum filme carregado"
+            android:textSize="20dp" />
+</TableRow>
+
+
+    <TableRow>
+
+        <ImageView android:src="@drawable/director"
+            android:paddingBottom="15dp" />
 
     <TextView
+        android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/detales_nome_dir"
         android:text="Diretor" />
+    </TableRow>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/detales_genero"
-        android:text="Genero" />
+    <TableRow>
 
+        <ImageView android:src="@drawable/theater"
+            android:paddingBottom="15dp"/>
+
+        <TextView
+            android:textSize="20dp"
+            android:id="@+id/detales_genero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Genero"
+            />
+    </TableRow>
+
+    <TableRow>
+        <ImageView android:src="@drawable/calendar" />
     <TextView
+        android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/detales_ano"
         android:text="ano" />
+    </TableRow>
 
-</LinearLayout>
+
+</TableLayout>

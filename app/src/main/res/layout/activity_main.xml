@@ -38,7 +38,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="42dp"
-        android:text="Ver filmes"
+        android:text="@string/verfilmes"
         android:textColor="#2d3436"
         android:textSize="20sp" />
 
