@@ -7,34 +7,42 @@
     tools:context=".FilmeDetalesActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/detales_nome_fil"
-        android:text="Nenhum filme carregado"/>
-
     <ImageView
+        android:id="@+id/detales_tarja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/detales_tarja"
-        android:src="@drawable/ic_launcher_background"/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_launcher_background" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/detales_nome_dir"
+        android:textSize="20dp"
         android:text="Diretor" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/detales_genero"
+        android:textSize="20dp"
         android:text="Genero" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/detales_ano"
+        android:textSize="20dp"
         android:text="ano" />
+
+    <TextView
+        android:id="@+id/detales_nome_fil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nenhum filme carregado"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp" />
 
 </LinearLayout>
