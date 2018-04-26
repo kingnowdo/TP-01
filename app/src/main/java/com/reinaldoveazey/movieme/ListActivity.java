@@ -153,4 +153,24 @@ public class ListActivity extends Activity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder dialogoB = new AlertDialog.Builder(ListActivity.this);
+        dialogoB.setTitle(getString(R.string.sair));
+        dialogoB.setPositiveButton(getString(R.string.sim), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finishAffinity(); //sair
+            }
+        });
+        dialogoB.setNegativeButton(getString(R.string.nao), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //fazer nada
+            }
+        });
+        AlertDialog dialogo = dialogoB.create();
+        dialogo.show();
+    }
 }

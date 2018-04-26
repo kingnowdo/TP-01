@@ -36,5 +36,7 @@
     <string name="sim">Sim</string>
     <string name="Cancelar">Cancelar</string>
     <string name="Nadaremovido">Nada removido</string>
+    <string name="nao">Não</string>
+    <string name="sair">Você deseja sair?</string>
 
 </resources>

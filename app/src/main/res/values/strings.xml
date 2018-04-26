@@ -36,5 +36,7 @@
     <string name="sim">yes</string>
     <string name="Cancelar">Cancel</string>
     <string name="Nadaremovido">Nothing removed</string>
+    <string name="nao">No</string>
+    <string name="sair">Do you want to leave?</string>
 
 </resources>
