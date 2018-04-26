@@ -10,44 +10,44 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Insira os dados do filme"/>
+        android:text="@string/enterdatafilme"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editar_nome"
-        android:hint="Nome do filme"/>
+        android:hint="@string/Nomedofilme"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editar_idade"
-        android:hint="Classificação indicativa"
+        android:hint="@string/Classificaçãoindicativa"
         android:inputType="number"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editar_diretor"
-        android:hint="Diretor"/>
+        android:hint="@string/Diretor"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editar_genero"
-        android:hint="Gênero"/>
+        android:hint="@string/Gênero"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editar_ano"
-        android:hint="Ano de lançamento"
+        android:hint="@string/Anodelançamento"
         android:inputType="number"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editar_ok"
-        android:text="Criar"/>
+        android:text="@string/Criar"/>
 
 </LinearLayout>
