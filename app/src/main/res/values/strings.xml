@@ -1,6 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Movie Me</string>
+
     <string name="verfilmes">see movies</string>
+
     <string name="Osseusfilmes">Your movies</string>
 
 </resources>
