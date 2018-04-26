@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,7 +40,7 @@ public class FilmeDetalesActivity extends Activity {
             generoV.setText(genero);
             anoV.setText(ano);
 
-            Button botaoC = findViewById(R.id.detales_btCompartilha);
+            ImageButton botaoC = findViewById(R.id.detales_btCompartilha);
 
             //Fazer a mensagem
             String msgCompartilhar = "Veja esse filme: " + name + ", filme de " + genero + " do diretor " + nameDir + ". " + ano;
