@@ -49,7 +49,7 @@ public class NewMovieActivity extends Activity {
                     finish(); //Finalizar essa atividade e assim voltar para a anterior
                 }
                 else {
-                    Toast.makeText(NewMovieActivity.this,"Por favor, preencha todos os campos",Toast.LENGTH_LONG).show();
+                    Toast.makeText(NewMovieActivity.this,getString(R.string.Porfavorpreencha),Toast.LENGTH_LONG).show();
                 }
             }
         });

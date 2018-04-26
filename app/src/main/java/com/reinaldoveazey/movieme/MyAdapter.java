@@ -22,10 +22,10 @@ public class MyAdapter extends BaseAdapter {
         this.context = context;
         movies = new ArrayList<>();
 
+        //Arquivo.carregarArquivo(context); //Carregar a partir do arquivo
+
         //... carrega dados da lista
-        movies.add(new Movie(18, "Disneyland with Honda", "Sr. Incrível", "Migué supremo", 2013));
-        movies.add(new Movie(0, "Entrei num armário em Hogwarts e saí em Nárnia", "eu", "n", 2018));
-        movies.add(new Movie(12,"Atrazados mas de pé","O destino","Desespero",2018));
+        movies.add(new Movie(0, "Vamos começar", "Nesta tela você poderá compartilhar seu filme", "Remova este item quando quiser", 0));
     }
     @Override
     public int getCount() {
@@ -41,6 +41,10 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public long getItemId(int i) {
         return i;
+    }
+
+    public ArrayList<Movie> getMovies(){
+        return movies;
     }
 
     static public Integer obterImagemTarja(int idade){

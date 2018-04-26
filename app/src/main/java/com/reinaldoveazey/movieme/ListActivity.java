@@ -23,18 +23,19 @@ public class ListActivity extends Activity {
         startActivityForResult(intent,REQUEST_MOVIE_CODE);
     }
     private void removerItem(int pos, MyAdapter adaptador, ListView moviesListView){
-        String msgRem = adaptador.remover(pos).getName() + " removido!"; //remover
+        String msgRem = adaptador.remover(pos).getName() + " " + getString(R.string.removido); //remover
         moviesListView.setAdapter(adaptador); //atualizar lista
+        //Arquivo.salvarArquivo(adaptador.getMovies(),this); //Salvar modificações no arquivo
         Toast.makeText(ListActivity.this,msgRem,Toast.LENGTH_SHORT).show();
     }
     private void setModoLista(){
         TextView title = findViewById(R.id.title);
-        title.setText("Os seus filmes");
+        title.setText(getString(R.string.Osseusfilmes));
         modo = 0;
     }
     private void setModoRemover(){
         TextView title = findViewById(R.id.title);
-        title.setText("Selecione alguém para excluir");
+        title.setText(getString(R.string.Selecioneexcluir));
         modo = 1;
     }
 
@@ -54,6 +55,7 @@ public class ListActivity extends Activity {
                 ListView lista = findViewById(R.id.listmain);
                 MyAdapter adaptador = (MyAdapter) lista.getAdapter();
                 adaptador.adicionar(movie);
+                //Arquivo.salvarArquivo(adaptador.getMovies(),this); //Salvar modificações no arquivo
                 lista.setAdapter(adaptador); //atualizar
             }
         }
@@ -74,12 +76,12 @@ public class ListActivity extends Activity {
             case R.id.menu_remove:
                 if(modo==0) setModoRemover();
                 else if(modo==1) setModoLista();
-                else Toast.makeText(ListActivity.this,"Algo de errado aconteceu",Toast.LENGTH_SHORT).show();
+                else Toast.makeText(ListActivity.this,getString(R.string.Algoerrado),Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.menu_ajuda:
                 AlertDialog.Builder dialogoB = new AlertDialog.Builder(this);
-                dialogoB.setTitle("Ajuda");
-                dialogoB.setMessage("Clique na item lixeira na barra de ações para alternar para o modo de remoção e clique nele novamente para retornar ao modo normal");
+                dialogoB.setTitle(getString(R.string.Ajuda));
+                dialogoB.setMessage(getString(R.string.textoAjuda));
                 AlertDialog dialogo = dialogoB.create();
                 dialogo.show();
                 return true;
@@ -119,10 +121,10 @@ public class ListActivity extends Activity {
                 }
                 else if(modo==1){ //O click abre diálogo para excluir um filme
                     AlertDialog.Builder dialogoB = new AlertDialog.Builder(ListActivity.this);
-                    String msg = "Você deseja remover o filme " + item.getName() + " da sua lista?";
-                    dialogoB.setTitle("Remover");
+                    String msg = getString(R.string.desejaremover) + " " + item.getName() + " " + getString(R.string.dasualista);
+                    dialogoB.setTitle(getString(R.string.Remover));
                     dialogoB.setMessage(msg);
-                    dialogoB.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    dialogoB.setPositiveButton(getString(R.string.sim), new DialogInterface.OnClickListener() {
                         //Remover e voltar para modo 0
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -130,11 +132,11 @@ public class ListActivity extends Activity {
                             setModoLista();
                         }
                     });
-                    dialogoB.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    dialogoB.setNegativeButton(getString(R.string.Cancelar), new DialogInterface.OnClickListener() {
                         //Voltar para modo 0
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(ListActivity.this,"Nada removido",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ListActivity.this,getString(R.string.Nadaremovido),Toast.LENGTH_SHORT).show();
                             setModoLista();
                         }
                     });
@@ -142,7 +144,7 @@ public class ListActivity extends Activity {
                         //Fazer nada
                         @Override
                         public void onCancel(DialogInterface dialog) {
-                            Toast.makeText(ListActivity.this,"Selecione algum filme para ser removido",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ListActivity.this,getString(R.string.Selecioneexcluir),Toast.LENGTH_SHORT).show();
                         }
                     });
                     AlertDialog dialogo = dialogoB.create();

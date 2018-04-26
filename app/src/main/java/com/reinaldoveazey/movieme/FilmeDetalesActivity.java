@@ -43,9 +43,9 @@ public class FilmeDetalesActivity extends Activity {
             ImageButton botaoC = findViewById(R.id.detales_btCompartilha);
 
             //Fazer a mensagem
-            String msgCompartilhar = "Veja esse filme: " + name + ", filme de " + genero + " do diretor " + nameDir + ". " + ano;
-            if(tarja==0) msgCompartilhar = msgCompartilhar + ". Indicado para todos os públicos.";
-            else msgCompartilhar = msgCompartilhar + ". Indicado para maiores de " + tarja + " anos.";
+            String msgCompartilhar = getString(R.string.Vejaessefilme) + " " + name + " " + getString(R.string.filmede) + " " + genero + " " + getString(R.string.dodiretor) + " " + nameDir + ". " + ano;
+            if(tarja==0) msgCompartilhar = msgCompartilhar + getString(R.string.livre);
+            else msgCompartilhar = msgCompartilhar + getString(R.string.maiores) + " " + tarja + " " + getString(R.string.anos);
             final String msgCompartilharP = msgCompartilhar;
 
             botaoC.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +59,7 @@ public class FilmeDetalesActivity extends Activity {
             });
         }
         else{
-            Toast.makeText(this,"Algo de errado aconteceu",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getString(R.string.Algoerrado),Toast.LENGTH_SHORT).show();
         }
 
     }
